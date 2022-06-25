@@ -18,6 +18,7 @@ public class CarsController {
 
     @GetMapping(value = "/cars")
     public String limitedList(@RequestParam(value = "count", defaultValue = "5") int count, Model model) {
+        System.out.println("The client passed the value " + count);
         model.addAttribute("list", cars.getLimitList(count));
         return "cars";
     }
